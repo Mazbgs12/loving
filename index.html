@@ -17,12 +17,12 @@
       animation: gradientBG 15s ease infinite;
       font-family: 'Arial', sans-serif;
       color: white;
-      font-size: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      transition: background 1s ease;
+      padding: 20px;
+      overflow: hidden;
     }
 
     @keyframes gradientBG {
@@ -31,9 +31,18 @@
       100% { background-position: 0% 50%; }
     }
 
+    .text {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      font-size: 10vw; /* responsive font size */
+      text-align: center;
+    }
+
     .text span {
       display: inline-block;
-      margin: 0 8px;
+      margin: 0 0.3em;
       opacity: 0;
       transform: scale(0);
       transition: all 0.3s;
@@ -54,8 +63,6 @@
 
   <!-- mo.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
-
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
