@@ -22,6 +22,7 @@
       align-items: center;
       height: 100vh;
       padding: 20px;
+      text-align: center;
       overflow: hidden;
     }
 
@@ -33,35 +34,53 @@
 
     .text {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      font-size: 10vw; /* responsive font size */
-      text-align: center;
+      font-size: 10vw;
+      line-height: 1.2;
     }
 
-    .text span {
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0.2em 0;
+    }
+
+    .row span {
       display: inline-block;
-      margin: 0 0.3em;
+      margin: 0 0.2em;
       opacity: 0;
       transform: scale(0);
       transition: all 0.3s;
+      animation: float 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0) scale(1);
+      }
+      to {
+        transform: translateY(-15px) scale(1.05);
+      }
     }
   </style>
 </head>
 <body>
   <div class="text" id="text">
-    <span>I</span>
-    <span>L</span>
-    <span>O</span>
-    <span>V</span>
-    <span>E</span>
-    <span>Y</span>
-    <span>O</span>
-    <span>U</span>
+    <div class="row" data-line="1">
+      <span>I</span>
+      <span>❤️</span>
+    </div>
+    <div class="row" data-line="2">
+      <span>L</span><span>O</span><span>V</span><span>E</span>
+    </div>
+    <div class="row" data-line="3">
+      <span>Y</span><span>O</span><span>U</span>
+      <span>❤️</span>
+    </div>
   </div>
 
-  <!-- mo.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
   <script src="script.js"></script>
 </body>
